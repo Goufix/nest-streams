@@ -2,7 +2,6 @@ import { HttpService } from '@nestjs/axios';
 import { Injectable, Logger } from '@nestjs/common';
 import * as Parser from 'jsonparse';
 import { lastValueFrom } from 'rxjs';
-console.log('Parser', new Parser());
 
 @Injectable()
 export class AppService {
