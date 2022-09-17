@@ -27,18 +27,14 @@ export class AppService {
       parser.onValue = (value) => {
         try {
           if (value?.admins) {
-            console.log('value', value);
             res.write(JSON.stringify(value) + ',');
           }
         } catch {}
       };
+
       obs.data.on('end', () => {
-        console.log('a');
-        setTimeout(() => {
-          console.log('b');
-          res.write(']');
-          res.end();
-        }, 3000);
+        res.write(']');
+        res.end();
       });
     } catch (e) {
       this.logger.error(e);
